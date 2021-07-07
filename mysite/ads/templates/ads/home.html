@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+</head>
+<body>
+<style type="text/css">
+img {object-fit: scale-down;width:150px; height: 150px;}
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:white;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;background-color: black;color: white;}
+.tg .tg-0lax{text-align:center;vertical-align:top}
+@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
+
+<div class="tg-wrap"><table class="tg">
+<thead>
+  <tr>
+    <th class="tg-ul38">Image</th>
+    <th class="tg-ul38">Advertiser</th>
+    <th class="tg-ul38">Publisher</th>
+    <th class="tg-ul38">Platform</th>
+    <th class="tg-ul38">Vertical</th>
+    <th class="tg-ul38">Date</th>
+    <th class="tg-ul38">Time</th>
+    <th class="tg-ul38">Landing Page</th>
+  </tr>
+</thead>
+<tbody>
+	{% for ad in ads %}
+  <tr>
+  	
+    <td class="tg-0lax"><img src="{{ad.imageurl}}" alt="{{ad.imagename}}"></td>
+    <td class="tg-0lax">{{ad.advertisername}}</td>
+    <td class="tg-0lax">{{ad.name}}</td>
+    <td class="tg-0lax">{{ad.platformtype}}</td>
+    <td class="tg-0lax">{{ad.category_name}}</td>
+    <td class="tg-0lax">{{ad.timestamp|date:"SHORT_DATE_FORMAT"}}</td>
+    <td class="tg-0lax">{{ad.timestamp|time}}</td>
+    <td class="tg-0lax"><a href="{{ad.destinationlink}}">Go To Website</a></td>
+    
+  </tr>
+  {% endfor %}
+</tbody>
+</table></div>
+</body>
+</html>
