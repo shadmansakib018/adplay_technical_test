@@ -1,2 +1,2 @@
-# adplay_technical_test /n
+# adplay_technical_test
 I have used django along with postgresql.
